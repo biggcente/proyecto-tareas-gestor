@@ -1,0 +1,77 @@
+
+@media (max-width: 1024px) {
+
+    /* Kanban pasa a 2 columnas */
+    #kanban {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+
+    /* Kanban pasa a 1 sola columna */
+    #kanban {
+        grid-template-columns: 1fr;
+    }
+
+    /* Centrar contenido del header */
+    header {
+        text-align: center;
+    }
+
+    /* Menú de navegación más flexible */
+    nav {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    /* Formulario ocupa más espacio en pantallas pequeñas */
+    form {
+        width: 90%;
+    }
+
+    /* Separación entre columnas */
+    .columna {
+        margin-bottom: 1rem;
+    }
+}
+
+
+/* pantallas de hasta 480px  */
+@media (max-width: 480px) {
+
+    /* Reducir tamaño general de texto */
+    body {
+        font-size: 14px;
+    }
+
+    /* Título más pequeño */
+    h1 {
+        font-size: 20px;
+    }
+
+    /* Botones más compactos */
+    button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    /* Botones de acciones en columna */
+    .acciones {
+        flex-direction: column;
+    }
+
+    /* Botones ocupan todo el ancho */
+    .acciones button {
+        width: 100%;
+    }
+
+    /* Texto de tareas más pequeño */
+    .tarea {
+        font-size: 14px;
+    }
+}

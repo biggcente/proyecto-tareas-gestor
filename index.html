@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestor de Tareas</title>
+
+    <!-- Archivo de estilos CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+
+<header>
+
+    <img src="assets/img/gestor.png" class="logo">
+
+
+    <!-- Título principal del sistema -->
+    <h1>Gestor de Tareas</h1>
+
+    <!-- Menú de navegación interna -->
+    <nav>
+        <!-- Lleva al formulario para agregar tareas -->
+        <a href="#formulario">Agregar</a>
+
+        <!-- Lleva al tablero Kanban -->
+        <a href="#kanban">Tablero</a>
+    </nav>
+</header>
+
+<!--contenedor principal-->
+<main>
+
+    <!--formulario de tareas -->
+    <section id="formulario">
+
+        <!-- Formulario para crear nuevas tareas -->
+        <form id="form-tarea">
+
+            <!-- Campo descripción de la tarea -->
+            <label for="descripcion">Descripción:</label>
+            <textarea id="descripcion" required></textarea>
+
+            <!-- Selector de prioridad -->
+            <label for="prioridad">Prioridad:</label>
+            <select id="prioridad" required>
+                <option value="">Seleccionar...</option>
+                <option value="alta">Alta</option>
+                <option value="media">Media</option>
+                <option value="baja">Baja</option>
+            </select>
+
+            <!-- Fecha límite de la tarea -->
+            <label for="fecha">Fecha límite:</label>
+            <input type="date" id="fecha" required>
+
+            <!-- Botón para enviar la tarea -->
+            <button type="submit">Agregar Tarea</button>
+
+        </form>
+    </section>
+
+    <section id="kanban">
+
+        <!-- Columna: tareas pendientes -->
+        <section class="columna" id="pendientes">
+            <h2>Pendientes <span class="contador">0</span></h2>
+            <ul class="tareas-container"></ul>
+        </section>
+
+        <!-- Columna: tareas en progreso -->
+        <section class="columna" id="en-progreso">
+            <h2>En Progreso <span class="contador">0</span></h2>
+            <ul class="tareas-container"></ul>
+        </section>
+
+        <!-- Columna: tareas completadas -->
+        <section class="columna" id="completadas">
+            <h2>Completadas <span class="contador">0</span></h2>
+            <ul class="tareas-container"></ul>
+        </section>
+
+    </section>
+
+</main>
+
+<footer>
+    <!-- Información de contacto -->
+    <p>Contacto: profesor@ejemplo.com</p>
+</footer>
+
+<!-- Archivo JavaScript con la lógica del sistema -->
+<script src="assets/js/script.js"></script>
+
+</body>
+</html>

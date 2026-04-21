@@ -1,0 +1,189 @@
+/* definicion de variables globales para colores y estilos repetitivos */
+:root {
+    --color-primario: #2563eb;
+    --color-secundario: #7c3aed;
+    --color-terciario: #10b981;
+
+    /* colores especificos para los estados de las tareas */
+    --color-pendiente: #3b82f6;
+    --color-progreso: #f59e0b;
+    --color-completado: #10b981;
+
+    /* colores de interfaz y fondos */
+    --fondo: #f4f6fb;
+    --blanco: #ffffff;
+    --texto: #1f2937;
+
+    /* bordes redondeados y sombras estandar */
+    --radio: 10px;
+    --sombra: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+/* configuracion basica del cuerpo del documento */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: var(--fondo);
+    color: var(--texto);
+}
+
+/* estilo de la cabecera principal */
+header {
+    background: var(--color-primario);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+}
+
+/* posicionamiento del logo en la esquina superior izquierda */
+.logo {
+    width: 150px;
+    height: 100px;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+}
+
+/* ajuste de margen para que el titulo no choque con el logo */
+header h1 {
+    margin-left: 60px;
+}
+
+/* estilo de los enlaces de navegacion */
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+/* distribucion del contenido principal en columnas */
+main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1rem;
+    gap: 2rem;
+}
+
+/* seccion del formulario de ingreso */
+#formulario {
+    flex: 1;
+}
+
+/* diseño de la tarjeta del formulario */
+form {
+    background: var(--blanco);
+    padding: 1rem;
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    max-width: 500px;
+}
+
+/* estilos de las etiquetas y campos de entrada */
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+textarea,
+select,
+input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: var(--radio);
+    box-sizing: border-box;
+}
+
+/* estilo de los botones de accion */
+button {
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: var(--radio);
+    background: var(--color-secundario);
+    color: white;
+    cursor: pointer;
+}
+
+/* efecto visual al pasar el mouse por encima del boton */
+button:hover {
+    opacity: 0.5;
+}
+
+/* contenedor para las columnas del tablero kanban */
+#kanban {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 280px;
+}
+
+/* estilo de cada columna individual */
+.columna {
+    background: var(--blanco);
+    padding: 1rem;
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+}
+
+.columna h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* reset de lista para los contenedores de tareas */
+.tareas-container {
+    list-style: none;
+    padding: 0;
+}
+
+/* diseño de la tarjeta de tarea individual */
+.tarea {
+    background: #fff;
+    border-left: 5px solid var(--color-pendiente); /* color por defecto: pendiente */
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+}
+
+/* cambio de color lateral segun el estado de la tarea */
+#en-progreso .tarea {
+    border-left-color: var(--color-progreso);
+}
+
+#completadas .tarea {
+    border-left-color: var(--color-completado);
+}
+
+/* estilo para informacion secundaria dentro de la tarea */
+.meta {
+    font-size: 12px;
+    color: gray;
+}
+
+/* seccion de botones de accion dentro de cada tarea */
+.acciones {
+    margin-top: 8px;
+    display: flex;
+    gap: 5px;
+}
+
+.acciones button {
+    flex: 1;
+    font-size: 12px;
+    padding: 5px;
+}
+
+/* pie de pagina */
+footer {
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    background: #ddd;
+}
